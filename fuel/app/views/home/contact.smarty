@@ -1,0 +1,1 @@
+<p>You can contact Mike P at {Html::mail_to($primary_contact, null, 'Dear Mike P...')}</p>

@@ -1,0 +1,9 @@
+<div id="wrapper">
+	<h1>Oops.</h1>
+	
+	<p class="intro">The page you are looking for cannot be found.</p>
+
+	<p class="footer">
+		<a href="http://fuelphp.com">Fuel PHP</a> is released under the MIT license.
+	</p>
+</div>

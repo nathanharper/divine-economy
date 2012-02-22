@@ -1,0 +1,125 @@
+<h1>Checkout</h1>
+<a href="/">back</a>
+{Html::br(2)}
+<p style="display:none;" class="error-message"></p>
+<div class="left">
+	<form method="" action="" id="releases-form">
+		<table id="in-cart">
+			{foreach $rels as $rel}
+				{if isset($rel->id)}
+					<tr class="cart-item" rel="{$rel->id}">
+						<td>
+							{$rel->name} 
+						</td>
+						<td>
+							~~~~ Quantity: 
+							<select class="quantity" name="quantity[{$rel->id}]">
+								{section name=quantity start=1 loop=21 step=1}
+								  <option value="{$smarty.section.quantity.index}">{$smarty.section.quantity.index}</option>
+								{/section}
+							</select> ~~~~
+						</td>
+						<td>
+							<input type="button" rel="{$rel->id}" class="remove_from_cart" value="Remove from Cart" />
+						</td>
+					</tr>
+				{/if}
+			{/foreach}
+		</table>
+	</form>
+</div>
+<div class="left">
+	<form method="" action="" id="payment-form">
+		<input type="hidden" name="countrycode" value="US" />
+		<table id="payment-info">
+			<tr>
+				<th colspan="2">Credit Card Info</th>
+				<th colspan="2">Shipping Information</th>
+				
+			</tr>
+			<tr>
+				<td rel="firstname">First Name: </td>
+				<td><input type="text" name="firstname" /></td>
+				<td rel="ship_city">City: </td>
+				<td><input type="text" name="ship_city" /></td>
+			</tr>
+			<tr>
+				<td rel="lastname">Last Name: </td>
+				<td><input type="text" name="lastname" /></td>
+				<td rel="ship_zip">Zip: </td>
+				<td><input type="text" name="ship_zip" /></td>
+			</tr>
+			<tr>
+				<td rel="street">Street Address: </td>
+				<td><textarea name="street"></textarea></td>
+				<td rel="ship_street">Street Address: </td>
+				<td><textarea name="ship_street"></textarea></td>
+			</tr>
+			{* <tr><td>Address 2: </td><td><input type="text" name="address2" /></td></tr> *}
+			<tr>
+				<td rel="city">City: </td>
+				<td><input type="text" name="city" /></td>
+				<td rel="ship_state">State: </td>
+				<td>
+					<select name="ship_state">
+						<option value="">Select...</option>
+						{foreach Config::get('state_array') as $code => $name}
+							<option value="{$code}">{$name}</option>
+						{/foreach}
+					</select>
+				</td>
+			</tr>
+			<tr><td rel="zip">Zip: </td><td><input type="text" name="zip" /></td></tr>
+			<tr>
+				<td rel="state">State: </td>
+				<td>
+					<select name="state">
+						<option value="">Select...</option>
+						{foreach Config::get('state_array') as $code => $name}
+							<option value="{$code}">{$name}</option>
+						{/foreach}
+					</select>
+				</td>
+				<td colspan="2" style="text-align:right;">
+					same as billing address <input type="checkbox" class="shipping-check" name="shipping_eq_billing" />
+				</td>
+			</tr>
+			<tr>
+				<td rel="creditcardtype">Credit Card Type: </td>
+				<td>
+					<select name="creditcardtype">
+						<option value=""></option>
+						<option value="Visa">Visa</option>
+						<option value="MasterCard">Master Card</option>
+						<option value="AmEx">American Express</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td rel="acct">CC Number: </td>
+				<td><input type="text" name="acct" /></td>
+			</tr>
+			<tr><td rel="cvv2">CC Code: </td><td><input type="text" name="cvv2" /></td></tr>
+			<tr>
+				<td>CC Expiration: </td>
+				<td>
+					<select name="cc_exp_month">
+						{section name=month start=1 loop=13 step=1}
+						  <option value="{$smarty.section.month.index}">{$smarty.section.month.index}</option>
+						{/section}
+					</select>
+					<select name="cc_exp_year">
+						{$year = $smarty.now|date_format:'%Y'}
+						{section name=year start=0 loop=10 step=1}
+							<option value="{$year+$smarty.section.year.index}">{$year+$smarty.section.year.index}</option>
+						{/section}
+					</select>
+				</td>
+			</tr>
+		</table>
+		{Html::br(2)}
+		<input type="button" value="Pay Now" id="cc_submit" />
+	</form>
+</div>
+	
+	

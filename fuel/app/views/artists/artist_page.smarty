@@ -1,0 +1,12 @@
+<h1>BAND PAGE</h1>
+<p>The name of this band is {$artist->name}</p>
+<p>{$artist->description}</p>
+{if $artist->photo}
+	<img src="/{Config::get('image_dir')}/{$artist->photo}" />
+{/if}
+
+<h2>Releases</h2>
+{foreach $artist->releases as $release}
+	<a href="/releases?id={$release->id}">{$release->name}</a>
+	<br />
+{/foreach}

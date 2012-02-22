@@ -1,0 +1,6 @@
+<h1>Artist Index</h1>
+
+{foreach $artists as $artist}
+	<a href="/artists?id={$artist->id}">{$artist->name}</a>
+	<br />
+{/foreach}

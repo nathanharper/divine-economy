@@ -1,0 +1,45 @@
+<h1>{Config::get('project_name')}</h1>
+
+{* <div id="jpId"></div> INITIALIZE JPLAYER *}
+<form method="" action="">
+	
+	<div id="artists-container">
+		<div class="head_link_container">
+			<a href="javascript:void(0);" onclick="$('#info-container').load_release();" class="head_link">
+				CATALOGUE
+			</a>
+		</div>
+		{foreach $releases as $r}
+			<div class="sub_link_container">
+				<a href="javascript:void(0);" onclick="$('#info-container').load_release('{$r->id}');">
+					{$r->name}
+				</a>
+			</div>
+		{/foreach}
+		
+		<div class="head_link_container">
+			<a href="javascript:void(0);" class="head_link" onclick="$('#info-container').load_blog();">
+				TUMBLR
+			</a>
+		</div>
+		{foreach ['audio','video','photo'] as $post_type}
+			<div class="sub_link_container">
+				<a href="javascript:void(0);" onclick="$('#info-container').load_blog('{$post_type}');">
+					{$post_type}
+				</a>
+			</div>
+		{/foreach}
+		<div class="sub_link_container">
+			<a href="javascript:void(0);" onclick="$('#info-container').load_blog('','gig');">events</a>
+		</div>
+		
+		<div class="head_link_container"><a href="#" class="head_link">MIXES</a></div>
+		
+		<div class="head_link_container"><a href="/contact" class="head_link">CONTACT</a></div>
+		
+		{* <div class="head_link_container"><a href="#" class="head_link">STORE</a></div> *}
+	</div>
+	
+	<div id="info-container"></div>
+	
+</form>

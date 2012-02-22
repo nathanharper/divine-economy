@@ -1,0 +1,164 @@
+body { 
+	background-color: #ffffff; 
+	font-family: Helvetica, Arial; 
+	font-size: 12px; 
+	color:#443E47;
+	line-height: 20px; 
+	margin: 40px; 
+}
+
+#wrapper { 
+	padding: 30px; 
+	background: #fff; 
+	color: #333; 
+	margin: 0 auto; 
+	width: 600px; 
+}
+
+a { 
+	color: #36428D; 
+}
+
+h1 { 
+	color: #000; 
+	font-size: 55px; 
+	padding: 0 0 25px; 
+	line-height: 1em; 
+}
+
+.intro { 
+	font-size: 22px; 
+	line-height: 30px; 
+	font-family: georgia, serif; 
+	color: #555; 
+	padding: 29px 0 20px; 
+	border-top: 1px solid #CCC; 
+}
+
+h2 { 
+	margin: 50px 0 15px; 
+	padding: 0 0 10px; 
+	font-size: 18px; 
+	border-bottom: 1px dashed #ccc; 
+}
+
+h2.first { 
+	margin: 10px 0 15px; 
+}
+	
+p { 
+	margin: 0 0 15px; 
+	line-height: 22px;
+}
+
+a {
+	color: #443E47; 
+}
+
+pre { 
+	border-left: 1px solid #ddd; 
+	line-height:20px; 
+	margin:20px; 
+	padding-left:1em; 
+	font-size: 16px; 
+}
+
+pre, code { 
+	color:#137F80; 
+	font-family: Courier, monospace; 
+}
+
+ul { 
+	margin: 15px 30px; 
+}
+
+li { 
+	line-height: 24px;
+}
+
+.footer { 
+	color: #777; 
+	font-size: 12px; 
+	margin: 40px 0 0 0; 
+}
+
+#artists-container {
+	float:left;
+	/*width:200px;*/
+}
+
+#info-container {
+	float:left;
+	width:500px;
+	margin-left:50px;
+}
+
+.blog-date {
+	float:right;
+	font-size:12px;
+	font-weight:normal;
+	font-style:italic;
+}
+
+#blog-tabs a {
+	text-decoration:none;
+}
+
+#blog-tabs a.active {
+	color:white;
+	background-color:blue;
+	border:1px solid #000000;
+}
+
+.left {
+	float:left;
+}
+
+.right {
+	float:right;
+}
+
+table {
+	border:1px solid #000000;
+}
+
+th {
+	background-color:gray;
+}
+td {
+	border:1px solid black;
+}
+
+#artists-container {
+	line-height:19px;
+}
+
+#artists-container a {
+	text-decoration:none;
+}
+
+#artists-container .sub_link_container a:hover {
+	background-color:#DCEDEF;
+}
+
+#artists-container .head_link {
+	font-weight:bold;
+}
+
+#artists-container .sub_link_container {
+	
+}
+
+#artists-container .head_link_container {
+	margin-top:10px;
+}
+
+.tumblr-entry.audio .art img {
+	height:200px;
+	width:200px;
+}
+
+.ajax-loader {
+	text-align:center;
+	margin-top:100px;
+}

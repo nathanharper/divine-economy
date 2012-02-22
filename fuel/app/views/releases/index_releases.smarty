@@ -1,0 +1,31 @@
+{Html::h('RELEASE', 1)}
+{if count($release->artists) == 1}
+	The name of this band is: {$release->artist_list()}
+{else}
+	This is a collaboration between {$release->artist_list()}
+{/if}
+<br />
+This album is: {$release->name}
+
+{if $release->tracks}
+	{Html::h('TRACKS', 2)}
+	<div id="jpId"></div> {* INITIATE JPLAYER *}
+	{Html::br(2)}
+	{* if $audio = $release->get_audio() *}
+	<a href="javascript:void(0);" class="jplay_button play" uri="">
+	<table>
+		{foreach $release->tracks as $track}
+			<tr>
+				<td>{$track->track_num}: </td>
+				<td>{$track->name}</td>
+				<td>
+					{* if $track->audiofile}
+						{if $sample = $track->audiofile->get_uri(20)}
+							<a href="javascript:void(0);" class="jplay_button play" uri="{$sample}">play!</a>
+						{/if}
+					{/if *}
+				</td>
+			</tr>
+		{/foreach}
+	</table>
+{/if}

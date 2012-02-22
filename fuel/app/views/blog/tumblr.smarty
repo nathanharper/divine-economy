@@ -1,0 +1,72 @@
+{if $posts}
+	{foreach from=$posts item=p name=post_loop}
+		{if ! in_array($p->type, ['answer','chat'])}
+		<div class="tumblr-entry {$p->type}">
+			<div class="post-header">
+				<div class="post-date">
+					<a href="{$p->post_url}" target="_blank">{date('F j, Y', $p->timestamp)}</a>
+				</div>
+				{if isset($p->title)}
+					<div class="post-title"><b>{$p->title}</b></div>
+				{/if}
+			</div>
+			<div class="post-content">
+				{if $p->type eq 'text'}
+					<div class="post-text">
+						{$p->body}
+					</div>
+				{elseif $p->type eq 'photo'}
+					{foreach $p->photos as $photo}
+						<div class="post-photo">
+							<img src="{$photo->alt_sizes[2]->url}" />
+							<div class="post-caption">
+								{if $photo->caption}
+									{$photo->caption}
+								{else}
+									{$p->caption}
+								{/if}
+							</div>
+						</div>
+					{/foreach}
+				{elseif $p->type eq 'video'}
+					<div class="post-video">
+						{$p->player[1]->embed_code}
+					</div>
+					<div class="post-caption">{$p->caption}</div>
+				{elseif $p->type eq 'quote'}
+					<div class="post-quote">
+						<div class="quote-text"><em>"{$p->text}"</em></div>
+						<div class="quote-source">&mdash;{$p->source}</div>
+					</div>
+				{elseif $p->type eq 'link'}
+					<div class="post-link">
+						<a href="{$p->url}" target="_blank">
+							{if $p->description}
+								{$p->description}
+							{else}
+								{$p->url}
+							{/if}
+						</a>
+					</div>
+				{elseif $p->type eq 'audio'}
+					<div class="post-audio">
+						<div class="name">{$p->track_name}</div>
+						{if !empty($p->album_art)}
+							<div class="art"><img src="{$p->album_art}" /></div>
+						{/if}
+						<div class="player">{$p->player}</div>
+						<div class="caption">{$p->caption}</div>
+					</div>
+				{elseif $p->type eq 'answer'}
+
+				{elseif $p->type eq 'chat'}
+
+				{/if}
+			</div>
+		</div>
+		{if ! $smarty.foreach.post_loop.last}<hr />{/if}
+		{/if}
+	{/foreach}
+{else}
+	<p>No entries found.</p>
+{/if}
