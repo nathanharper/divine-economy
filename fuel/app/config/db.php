@@ -32,9 +32,9 @@ return array(
 		'type'			=> 'mysqli',
 		'connection'	=> array(
 			'hostname'   => 'localhost',
-			'database'   => 'mikeprecords',
-			'username'   => 'mikep',
-			'password'   => 'mik3P',
+			'database'   => 'divineec_data',
+			'username'   => 'divineec_admin',
+			'password'   => 'FAKEPASS',
 			'persistent' => false,
 		),
 		'table_prefix' => '',
