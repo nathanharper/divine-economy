@@ -31,10 +31,12 @@ return array(
 	Fuel::PRODUCTION => array(
 		'type'			=> 'mysqli',
 		'connection'	=> array(
+			// SENSITIVE DATA. MAKE A COPY OF THIS FILE
+			// OUTSIDE OF GIT BEFORE FILLING OUT.
 			'hostname'   => 'localhost',
-			'database'   => 'divineec_data',
-			'username'   => 'divineec_admin',
-			'password'   => 'FAKEPASS',
+			'database'   => '',
+			'username'   => '',
+			'password'   => '',
 			'persistent' => false,
 		),
 		'table_prefix' => '',

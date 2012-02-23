@@ -19,14 +19,16 @@ return array(
 	'secure_dir' => DOCROOT . '..' . DS . 'secure' . DS,
 	'blog_post_limit' => 20,
 	'date_format' => 'm/d/Y',
-	'tumblr_address' => 'nhreflex.tumblr.com',
-	'tumblr_key' => 'QvtQZ30xat5ANEhmuzG5c2HGVwPMqfEukMCMKgrDRUtG3xji91',
 	
-	// PayPal credentials
-	'paypal_user'=>'nathan_1302206546_biz_api1.reflexionsdata.com',
-	'paypal_pass'=>'1302206568',
-	'paypal_sig'=>'AQjhgd4rM7cafyXM8r.LshZ6u6X0Asng00iZg3yUZDSCdpVs1DxAV-Gv',
-	'paypal_url'=>'https://api-3t.sandbox.paypal.com/nvp',
+	// NOTE: THIS IS POTENTIALLY SENSITIVE INFO.
+	// INSTEAD OF FILLING THIS OUT, MAKE COPY CONFIG.PHP FILE
+	// OUTSIDE OF GIT
+	'tumblr_address' => '',
+	'tumblr_key' => '',
+	'paypal_user'=>'',
+	'paypal_pass'=>'',
+	'paypal_sig'=>'',
+	'paypal_url'=>'',
 	
 	'state_array' => array( 
 		"AL" => "Alabama",
