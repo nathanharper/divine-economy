@@ -11,9 +11,9 @@ call_user_func(function() {
 	/**
 	 * Set all the paths here
 	 */
-	$app_path       = '../divine_economy/fuel/app/';
-	$package_path   = '../divine_economy/fuel/packages/';
-	$core_path      = '../divine_economy/fuel/core/';
+	$app_path       = '../divec/fuel/app/';
+	$package_path   = '../divec/fuel/packages/';
+	$core_path      = '../divec/fuel/core/';
 
 
 	/**
