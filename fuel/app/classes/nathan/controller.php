@@ -8,6 +8,11 @@ abstract class Nathan_Controller extends Controller_Template {
 		
 		parent::before();
 		
+		/*$uri = explode('/', Uri::string());
+		if(empty($uri[0]) || $uri[0] != 'splash') {
+			Response::redirect(Uri::base(false).'splash');
+		}*/
+		
 		if($this->auto_render === true) {
 			// set up defaults
 			$this->template->title = Config::get('project_name', '');
@@ -49,5 +54,14 @@ abstract class Nathan_Controller extends Controller_Template {
 			}
 		}
 		return $smarty;
+	}
+	
+	public function add_body_class($class) {
+		if(isset($this->data['body_class'])) {
+			$this->template->body_class = $class;
+		}
+		else {
+			$this->template->body_class = array($class);
+		}
 	}
 } 

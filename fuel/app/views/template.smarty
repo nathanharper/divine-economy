@@ -6,7 +6,7 @@
 	{Asset::js($js)}
 	{$headers}
 </head> 
-<body>
+<body{if !empty($body_class)} class="{implode(' ', $body_class)}"{/if}>
 	{$body}
 </body>
 </html>
