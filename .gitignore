@@ -13,3 +13,4 @@ nbproject/
 .idea
 fuel/app/config/config.php
 fuel/app/config/db.php
+fuel/app/tmp/Smarty/templates_c/*

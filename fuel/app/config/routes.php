@@ -1,7 +1,7 @@
 <?php
 return array(
 	'_root_'  => 'splash',//'home/index',  // The default route
-	'home' => 'splash',
+	//'home' => 'splash',
 	'_404_'   => 'home/404',    // The main 404 route
 	//'admin'   => 'admin/login',
 	//'admin'	  => 'admin/login',
