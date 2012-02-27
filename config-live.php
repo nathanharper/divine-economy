@@ -15,7 +15,7 @@ return array(
 	'project_name' => "Divine Economy",
 	'image_dir' => 'files/images',
 	'audio_dir' => 'files/audio',
-	'ffmpeg' => '/opt/local/bin/ffmpeg',
+	'ffmpeg' => '/usr/bin/ffmpeg',
 	'secure_dir' => DOCROOT . '..' . DS . 'secure' . DS,
 	'blog_post_limit' => 20,
 	'date_format' => 'm/d/Y',
