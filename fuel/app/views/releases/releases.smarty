@@ -8,7 +8,7 @@
 		{/foreach}
 	</div>
 {elseif !empty($releases)}
-	{$dim = floor(sqrt(count($releases)))}
+	{$dim = max(floor(sqrt(count($releases))), 2)}
 	<table id="mosaic">
 		<tr>
 			{foreach from=$releases item=r name=rel_loop}
