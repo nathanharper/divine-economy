@@ -8,6 +8,7 @@
 		{/foreach}
 	</div>
 {elseif !empty($releases)}
+	{$dim = floor(sqrt(count($releases)))}
 	<table id="mosaic">
 		<tr>
 			{foreach from=$releases item=r name=rel_loop}
@@ -16,6 +17,9 @@
 						<img src="{$r->get_image(['field'=>'artwork','dimension'=>'230x230'])}" />
 					</a>
 				</td>
+				{if ! ($smarty.foreach.rel_loop.iteration % $dim) && ! $smarty.foreach.rel_loop.last}
+					</tr><tr>
+				{/if}
 			{/foreach}
 		</tr>
 	</table>
