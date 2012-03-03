@@ -150,18 +150,21 @@ var Global = new function() {
 	}
 	
 	jQuery.fn.load_blog = function(type, tag, callback) {
+		var me = $(this);
 		var params = {};
 		params['type'] = type ? type : '';
 		params['tag'] = tag ? tag : '';
 		
-		$(this).ajax_load().load('/blog/tumblr.html', params, function() {
+		me.ajax_load().load('/blog/tumblr.html', params, function() {
 			if(callback) {
 				callback();
 			}
 		});
+		return me;
 	}
 	
 	jQuery.fn.load_release = function(id, callback) {
+		var me = $(this);
 		var uri, params = {};
 		if(id) {
 			uri = 'one.html';
@@ -171,15 +174,46 @@ var Global = new function() {
 			uri = 'all.html'
 		}
 		
-		$(this).ajax_load().load('/releases/'+uri, params, function() {
+		me.ajax_load().load('/releases/'+uri, params, function() {
 			if(callback) {
 				callback();
 			}
 		});
+		return me;
+	}
+	
+	jQuery.fn.load_content = function(page, params, callback) {
+		var me = $(this);
+		var query = '';
+		if(typeof params != 'undefined' && params.length) {
+			$.each(params, function(key, idx) {
+				if(! query.length) {
+					query = '?'+key'='idx;
+				} else {
+					query += '&'+key+'='+idx;
+				}
+			});
+		}
+		me.ajax_load().load('/content/'+page+'.html'+query, function() {
+			if(callback) {
+				callback();
+			}
+		});
+		return me;
 	}
 	
 	jQuery.fn.ajax_load = function() {
 		return $(this).html('<div class="ajax-loader"><img src="/assets/img/ajax-loader.gif" /></div>');
+	}
+	
+	this.create_query = function(params) {
+		$.each(params, function(key, idx) {
+			if(! query.length) {
+				query = '?'+key'='idx;
+			} else {
+				query += '&'+key+'='+idx;
+			}
+		});
 	}
 	
 	return this;

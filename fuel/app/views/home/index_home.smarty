@@ -6,13 +6,13 @@
 	
 	<div id="artists-container">
 		<div class="head_link_container">
-			<a href="javascript:void(0);" onclick="$('#info-container').load_release();" class="head_link">
+			<a href="javascript:void(0);" class="head_link" onclick="$('#info-container').load_release();">
 				CATALOGUE
 			</a>
 		</div>
 		{foreach $releases as $r}
-			<div class="sub_link_container">
-				<a href="javascript:void(0);" onclick="$('#info-container').load_release('{$r->id}');">
+			<div class="sub_link_container" onclick="$('#info-container').load_release('{$r->id}');">
+				<a href="javascript:void(0);">
 					{$r->name}
 				</a>
 			</div>
@@ -24,19 +24,23 @@
 			</a>
 		</div>
 		{foreach ['audio','video','photo'] as $post_type}
-			<div class="sub_link_container">
-				<a href="javascript:void(0);" onclick="$('#info-container').load_blog('{$post_type}');">
+			<div class="sub_link_container" onclick="$('#info-container').load_blog('{$post_type}');">
+				<a href="javascript:void(0);">
 					{$post_type}
 				</a>
 			</div>
 		{/foreach}
-		<div class="sub_link_container">
-			<a href="javascript:void(0);" onclick="$('#info-container').load_blog('','gig');">events</a>
+		<div class="sub_link_container" onclick="$('#info-container').load_blog('','gig');">
+			<a href="javascript:void(0);">events</a>
 		</div>
 		
 		<div class="head_link_container"><a href="#" class="head_link">MIXES</a></div>
 		
-		<div class="head_link_container"><a href="/contact" class="head_link">CONTACT</a></div>
+		<div class="head_link_container">
+			<a href="javascript:void(0);" class="head_link" onclick="$('#info-container').load_content('contact');">
+				CONTACT
+			</a>
+		</div>
 		
 		{* <div class="head_link_container"><a href="#" class="head_link">STORE</a></div> *}
 	</div>

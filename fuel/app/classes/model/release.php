@@ -57,7 +57,7 @@ class Model_Release extends Nathan_Model {
 				'type' => 'Admin\\Field_Upload',
 				'desc' => 'Artwork',
 				'upload_type' => 'image',
-				'dimension' => array('230x230'),
+				'dimension' => array('230x230', '400x400'),
 			),
 			'tracks' => array(
 				'type' => '\\Field_Track',

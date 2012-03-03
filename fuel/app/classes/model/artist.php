@@ -31,7 +31,7 @@ class Model_Artist extends Nathan_Model {
 				'upload_type' => 'image',
 				'search' => false,
 				'list' => false,
-				'dimension' => array('230x230'),
+				'dimension' => array('230x230', '400x400'),
 			),
 			'audio' => array(
 				'type' => 'Admin\\Field_Upload',

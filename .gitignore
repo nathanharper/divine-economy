@@ -12,9 +12,6 @@ fuel/app/cache/*/*
 nbproject/
 .idea
 fuel/app/tmp/Smarty/templates_c/*
-public/assets/js/admin.js
-public/assets/css/admin.css
-public/files/images/*
-public/files/audio/*
+public/files/*/*
 config
 fuel/app/config

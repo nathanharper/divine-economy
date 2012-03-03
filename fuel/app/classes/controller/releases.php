@@ -18,7 +18,10 @@ class Controller_Releases extends Controller_Rest {
 			->order_by('name')
 			->get();
 			
-		$smarty = Nathan_Controller::new_smarty(array('releases' => $releases));
+		$smarty = Nathan_Controller::new_smarty(array(
+			'releases' => $releases,
+			'image_dim' => (count($releases) < 3 ? '400x400' : '230x230'),
+		));
 		$html = $smarty->fetch(APPPATH . 'views/releases/releases.smarty');
 		$this->response($html);
 	}

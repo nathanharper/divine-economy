@@ -1,6 +1,6 @@
 {if !empty($release)}
 	<div class="release-content">
-		<img src="{$release->get_image(['field'=>'artwork','dimension'=>'230x230'])}" />
+		<img src="{$release->get_image(['field'=>'artwork','dimension'=>'400x400'])}" class="release-img" />
 		{foreach from=$release->tracks item=track name=track_loop}
 			<div class="track">
 				{$smarty.foreach.track_loop.iteration}. &nbsp; {$track->name}
@@ -14,7 +14,7 @@
 			{foreach from=$releases item=r name=rel_loop}
 				<td>
 					<a href="javascript:void(0);" onclick="$('#info-container').load_release('{$r->id}');">
-						<img src="{$r->get_image(['field'=>'artwork','dimension'=>'230x230'])}" />
+						<img src="{$r->get_image(['field'=>'artwork','dimension'=> $image_dim])}" />
 					</a>
 				</td>
 				{if ! ($smarty.foreach.rel_loop.iteration % $dim) && ! $smarty.foreach.rel_loop.last}

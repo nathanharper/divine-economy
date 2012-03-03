@@ -141,22 +141,19 @@ table#mosaic td {
 
 #artists-container {
 	line-height:19px;
+	/*padding:0px 10px;*/
 }
 
 #artists-container a {
 	text-decoration:none;
 }
 
-#artists-container .sub_link_container a:hover {
+#artists-container .sub_link_container:hover {
 	background-color:#DCEDEF;
 }
 
 #artists-container .head_link {
 	font-weight:bold;
-}
-
-#artists-container .sub_link_container {
-	
 }
 
 #artists-container .head_link_container {
@@ -188,4 +185,15 @@ div#home-container,
 div#info-container/*,
 div#artists-container*/ {
 	margin-bottom:100px;
+}
+
+div.release-content img.release-img {
+	margin-bottom:15px;
+}
+
+#artists-container .sub_link_container {
+	cursor:pointer;
+	line-height:14px;
+	width:100%;
+	padding:0px 15px 0px 0px;
 }
