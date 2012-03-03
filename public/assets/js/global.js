@@ -1,12 +1,12 @@
 var Global = new function() {
-	$(document).ready(function() {
+	/*$.fn.ready(function() {
 		attachAudioPlayEvents();
 		attachBlogEvents();
 		attachCartEvents();
 		$('#cc_submit').attach_checkout_submit();
-	});
+	});*/
 	
-	jQuery.fn.attach_checkout_submit = function() {
+	/*jQuery.fn.attach_checkout_submit = function() {
 		var me = $(this);
 		me.click(function() {
 			var pay_form = $('form#payment-form');
@@ -147,7 +147,7 @@ var Global = new function() {
 				// TODO: need some sort of popup that redirects...
 			}
 		},'json');
-	}
+	}*/
 	
 	jQuery.fn.load_blog = function(type, tag, callback) {
 		var me = $(this);
@@ -186,13 +186,7 @@ var Global = new function() {
 		var me = $(this);
 		var query = '';
 		if(typeof params != 'undefined' && params.length) {
-			$.each(params, function(key, idx) {
-				if(! query.length) {
-					query = '?'+key'='idx;
-				} else {
-					query += '&'+key+'='+idx;
-				}
-			});
+			query = Global.create_query(params);
 		}
 		me.ajax_load().load('/content/'+page+'.html'+query, function() {
 			if(callback) {
@@ -207,9 +201,10 @@ var Global = new function() {
 	}
 	
 	this.create_query = function(params) {
+		var query = '';
 		$.each(params, function(key, idx) {
 			if(! query.length) {
-				query = '?'+key'='idx;
+				query = '?'+key+'='+idx;
 			} else {
 				query += '&'+key+'='+idx;
 			}

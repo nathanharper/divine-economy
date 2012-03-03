@@ -154,6 +154,8 @@ table#mosaic td {
 
 #artists-container .head_link {
 	font-weight:bold;
+	line-height:16px;
+	padding:0 0 0 5px;
 }
 
 #artists-container .head_link_container {
@@ -195,5 +197,5 @@ div.release-content img.release-img {
 	cursor:pointer;
 	line-height:14px;
 	width:100%;
-	padding:0px 15px 0px 0px;
+	padding:0px 15px 0px 5px;
 }
