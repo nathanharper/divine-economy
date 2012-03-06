@@ -3,11 +3,13 @@
 		{if ! in_array($p->type, ['answer','chat'])}
 		<div class="tumblr-entry {$p->type}">
 			<div class="post-header">
-				<div class="post-date">
+				{* <div class="post-date">
 					<a href="{$p->post_url}" target="_blank">{date('F j, Y', $p->timestamp)}</a>
-				</div>
+				</div> *}
 				{if isset($p->title)}
-					<div class="post-title"><b>{$p->title}</b></div>
+					<div class="post-title">
+						<h3>{$p->title}</h3>
+					</div>
 				{/if}
 			</div>
 			<div class="post-content">
@@ -64,7 +66,10 @@
 				{/if}
 			</div>
 		</div>
-		{if ! $smarty.foreach.post_loop.last}<hr />{/if}
+		<div class="tumblr-link" style="text-align:right;">
+			<a href="{$p->post_url}" target="_blank">View Post</a>
+		</div>
+		{if ! $smarty.foreach.post_loop.last}<hr style="margin:10px 0 20px 0;" />{/if}
 		{/if}
 	{/foreach}
 {else}

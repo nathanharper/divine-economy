@@ -1,5 +1,5 @@
 <div id="home-container">
-<h1>{Config::get('project_name')}</h1>
+<h1 class="home-title">{Config::get('project_name')}</h1>
 
 {* <div id="jpId"></div> INITIALIZE JPLAYER *}
 <form method="" action="" id="home-form">

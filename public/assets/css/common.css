@@ -4,7 +4,7 @@ body {
 	font-size: 12px; 
 	color:#443E47;
 	line-height: 20px; 
-	margin: 20px 40px; 
+	margin: 20px 10px; 
 }
 
 #wrapper { 
@@ -155,7 +155,7 @@ table#mosaic td {
 #artists-container .head_link {
 	font-weight:bold;
 	line-height:16px;
-	padding:0 0 0 5px;
+	padding:0 0 0 30px;
 }
 
 #artists-container .head_link_container {
@@ -195,7 +195,20 @@ div.release-content img.release-img {
 
 #artists-container .sub_link_container {
 	cursor:pointer;
-	line-height:14px;
-	width:100%;
-	padding:0px 15px 0px 5px;
+	line-height:16px;
+	/*width:100%;*/
+	padding:0px 15px 0px 30px;
+}
+
+div#home-container h1.home-title {
+	margin:0 0 0 30px;
+}
+
+div.tumblr-entry div.tumblr-link {
+	
+	margin:0px 10px;
+}
+
+div.tumblr-entry {
+	padding:0 0 0 15px;
 }
