@@ -52,11 +52,13 @@
 					</div>
 				{elseif $p->type eq 'audio'}
 					<div class="post-audio">
-						<div class="name">{$p->track_name}</div>
+						{* <div class="name">{$p->track_name}</div> *}
 						{if !empty($p->album_art)}
 							<div class="art"><img src="{$p->album_art}" /></div>
 						{/if}
-						<div class="player">{$p->player}</div>
+						<div class="player">
+							<a href="{$p->audio_url}" class="sc-player">{$p->track_name}</a>
+						</div>
 						<div class="caption">{$p->caption}</div>
 					</div>
 				{elseif $p->type eq 'answer'}

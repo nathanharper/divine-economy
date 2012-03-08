@@ -8,11 +8,6 @@ abstract class Nathan_Controller extends Controller_Template {
 		
 		parent::before();
 		
-		/*$uri = explode('/', Uri::string());
-		if(empty($uri[0]) || $uri[0] != 'splash') {
-			Response::redirect(Uri::base(false).'splash');
-		}*/
-		
 		if($this->auto_render === true) {
 			// set up defaults
 			$this->template->title = Config::get('project_name', '');
@@ -21,11 +16,15 @@ abstract class Nathan_Controller extends Controller_Template {
 			$this->template->css = array(
 				'common'=>'common.css',
 				'jqcustom' => 'jquery-custom.css',
+				//'sc-style' => 'sc-player-standard.css',
 			);
 			$this->template->js = array(
 				'jquery'=>'jquery-1.6.2.min.js',
 				'jqcustom' => 'jquery-custom.min.js',
-				'jplay' => 'jquery.jplayer.min.js',
+				//'jplay' => 'jquery.jplayer.min.js',
+				//'soundcloud' => 'http://connect.soundcloud.com/sdk.js',
+				'sc-api' => 'soundcloud.player.api.js',
+				'sc-player' => 'sc-player.js',
 				'global' => 'global.js',
 			);
 		}
@@ -33,7 +32,6 @@ abstract class Nathan_Controller extends Controller_Template {
 	}
 	
 	public function after() {
-		
 		if($this->template->body && is_string($this->template->body)) {
 			$this->template->body = View::factory($this->template->body, $this->data, false); 
 		}

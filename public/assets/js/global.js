@@ -1,4 +1,10 @@
 var Global = new function() {
+	/* TODO: Move this to Config */
+	/*SC.initialize({
+	   	client_id: "8563441446137d6ce22105b18c3be91c",
+		redirect_uri: "http://divine-economy.org/home"
+	});*/
+	
 	/*$.fn.ready(function() {
 		attachAudioPlayEvents();
 		attachBlogEvents();
