@@ -1,7 +1,7 @@
 <div id="home-container">
-{* <h1 class="home-title">
-	
-</h1> *}
+<h1 class="home-title">
+	<img src="/assets/img/logo-cropped.jpg" />
+</h1>
 
 {* <div id="jpId"></div> INITIALIZE JPLAYER *}
 <form method="" action="" id="home-form">
@@ -23,7 +23,7 @@
 		
 		<div class="head_link_container">
 			<a href="javascript:void(0);" class="head_link" onclick="$('#info-container').load_blog();">
-				TUMBLR
+				BLAWG
 			</a>
 		</div>
 		{foreach ['audio','video','photo'] as $post_type}
@@ -49,7 +49,7 @@
 	</div>
 	
 	<div id="info-container">
-		<img src="/assets/img/logo.jpg" />
+		<img src="/assets/img/particles_inverted.jpg" />
 	</div>
 	
 </form>

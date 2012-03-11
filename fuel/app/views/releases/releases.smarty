@@ -1,9 +1,10 @@
 {if !empty($release)}
 	<div class="release-content">
 		<img src="{$release->get_image(['field'=>'artwork','dimension'=>'400x400'])}" class="release-img" />
-		<p>
-			<b>{$release->name}</b> &mdash; {$release->artist_list()}
-		</p>
+		<b class="catalogue_id">{$release->catalogue_id}</b><br />
+		<b>{$release->name}</b><br />
+		{$release->artist_list()}
+		{Html::br(2)}
 		{foreach from=$release->tracks item=track name=track_loop}
 			<div class="track">
 				{$smarty.foreach.track_loop.iteration}. &nbsp; {$track->name}

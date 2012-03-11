@@ -142,3 +142,6 @@ ALTER TABLE `releases` ADD COLUMN `price` DECIMAL(5,2) UNSIGNED NOT NULL DEFAULT
 ALTER TABLE `transactions` ADD COLUMN `amount` DECIMAL(5,2) UNSIGNED NOT NULL DEFAULT 0.00;
 ALTER TABLE `transactions` ADD COLUMN `transaction_id` VARCHAR(128) DEFAULT NULL;
 ALTER TABLE `releases_transactions` ADD COLUMN `quantity` TINYINT UNSIGNED NOT NULL DEFAULT 0;
+
+-- New Shit
+alter table `releases` add column `catalogue_id` varchar(128) default null;

@@ -5,6 +5,7 @@ class Model_Release extends Nathan_Model {
 	protected static $_properties = array(
 		'id',
 		'name',
+		'catalogue_id',
 		'artwork',
 		'description',
 		'audio',
@@ -31,11 +32,18 @@ class Model_Release extends Nathan_Model {
 				'search' => true,
 				'list' => true,
 			),
+			'catalogue_id' => array(
+				'type' => 'Admin\\Field_String',
+				'desc' => 'Catalogue #',
+				'search' => true,
+				'list' => true,
+			),
 			'description' => array(
 				'type' => 'Admin\\Field_String',
 				'desc' => 'Description',
 				'search' => true,
-				'list' => true,
+				'list' => false,
+				'textarea' => true,
 			),
 			'price' => array(
 				'type' => 'Admin\\Field_String',

@@ -15,3 +15,4 @@ fuel/app/tmp/Smarty/templates_c/*
 public/files/*/*
 config
 fuel/app/config
+public/index.php

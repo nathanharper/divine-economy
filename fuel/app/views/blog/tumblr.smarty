@@ -20,7 +20,7 @@
 				{elseif $p->type eq 'photo'}
 					{foreach $p->photos as $photo}
 						<div class="post-photo">
-							<img src="{$photo->alt_sizes[2]->url}" />
+							<img src="{$photo->alt_sizes[0]->url}" />
 							<div class="post-caption">
 								{if $photo->caption}
 									{$photo->caption}
@@ -68,7 +68,7 @@
 				{/if}
 			</div>
 		</div>
-		<div class="tumblr-link" style="text-align:right;">
+		<div class="tumblr-link" style="text-align:left;">
 			<a href="{$p->post_url}" target="_blank">View Post</a>
 		</div>
 		{if ! $smarty.foreach.post_loop.last}<hr style="margin:10px 0 20px 0;" />{/if}
